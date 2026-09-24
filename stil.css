@@ -1,0 +1,55 @@
+.nacin { margin-bottom: 16px; }
+body:not(.vise) .samo-vise, body.vise .samo-jedna { display: none !important; }
+.model { display: flex; align-items: center; gap: 0; }
+.model span { padding: 10px 10px; border: 1px solid var(--crta); border-right: 0; border-radius: 10px 0 0 10px; background: var(--bg); color: var(--blijedo); }
+.model input { border-radius: 0 10px 10px 0; }
+.polje small.greska { color: var(--greska); }
+.polje small.ok { color: var(--ok); }
+.polje small[data-brojac].preko { color: var(--greska); font-weight: 600; }
+.primjer-stupci { background: var(--polje); border: 1px solid var(--crta); border-radius: 8px; padding: 6px 10px; margin: 6px 0 10px; font-size: 12.5px; }
+.poruke { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
+.poruke:empty { display: none; }
+.desno { position: sticky; top: 70px; }
+@media (max-width: 919px) { .desno { position: static; } }
+.uplatnice { display: flex; flex-direction: column; gap: 14px; }
+.veliki-barkod { background: #fff; padding: 12px; border-radius: 10px; border: 1px solid var(--crta); margin-bottom: 10px; }
+.veliki-barkod svg { width: 100%; height: auto; display: block; }
+.prazno { color: var(--blijedo); text-align: center; padding: 30px 16px; border: 2px dashed var(--crta); border-radius: var(--r); }
+
+/* ---------- izgled uplatnice (pojednostavljeni HUB-3A) ---------- */
+.uplatnica {
+  --u-crta: #9aa6c7; --u-oznaka: #53607f; --u-tekst: #111827; --u-pozadina: #fff; --u-polje: #f3f6ff;
+  background: var(--u-pozadina); color: var(--u-tekst); border: 1px solid var(--u-crta); border-radius: 6px;
+  padding: 3mm 3.5mm; font: 12px/1.35 Arial, Helvetica, sans-serif; box-shadow: var(--sjena);
+  display: grid; grid-template-columns: 70mm 1fr; gap: 0 4mm; overflow: hidden;
+}
+.u-naslov { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1.5px solid var(--u-crta); padding-bottom: 1.5mm; margin-bottom: 2mm; }
+.u-naslov b { font-size: 13px; letter-spacing: .06em; }
+.u-naslov span { font-size: 10px; color: var(--u-oznaka); }
+.u-lijevo, .u-desno { display: flex; flex-direction: column; gap: 2mm; min-width: 0; }
+.u-blok { border: 1px solid var(--u-crta); border-radius: 3px; padding: 1.2mm 1.8mm; background: var(--u-polje); min-height: 16mm; }
+.u-oznaka { display: block; font-size: 8.5px; text-transform: uppercase; letter-spacing: .04em; color: var(--u-oznaka); margin-bottom: .6mm; }
+.u-vrijednost { display: block; font-weight: 600; word-break: break-word; min-height: 1.35em; }
+.u-red { display: grid; gap: 2mm; }
+.u-red.iznos { grid-template-columns: 16mm 1fr; }
+.u-red.poziv { grid-template-columns: 16mm 1fr 18mm; }
+.u-red .u-blok { min-height: 0; }
+.u-iznos .u-vrijednost { font-size: 15px; text-align: right; font-variant-numeric: tabular-nums; }
+.u-barkod { margin-top: auto; padding-top: 1mm; }
+.u-barkod svg { display: block; background: #fff; }
+.u-greska { color: #b91c1c; font-weight: 600; font-size: 11px; padding: 4mm 0; }
+.uplatnica .mono { font-family: "Courier New", ui-monospace, monospace; }
+@media (max-width: 640px) {
+  .uplatnica { grid-template-columns: 1fr; font-size: 11.5px; }
+  .u-barkod { order: 5; }
+}
+
+@media print {
+  @page { size: A4; margin: 10mm; }
+  .ab-omot { max-width: none; padding: 0; }
+  .stupci { display: block; }
+  .desno { position: static; }
+  .uplatnice { gap: 6mm; }
+  .uplatnica { box-shadow: none; break-inside: avoid; page-break-inside: avoid; width: 190mm; grid-template-columns: 70mm 1fr; border-radius: 0; }
+  .prazno { display: none; }
+}

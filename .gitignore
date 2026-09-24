@@ -1,0 +1,10 @@
+.env
+.env.*
+.dev.vars
+tajne.json
+.tajne-produkcija.txt
+*.zip
+node_modules/
+Thumbs.db
+desktop.ini
+deploy.bat

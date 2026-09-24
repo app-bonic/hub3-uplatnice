@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HUB-3 uplatnice s barkodom</title>
+<meta name="description" content="Besplatni generator HUB-3 uplatnica s 2D barkodom (PDF417) za plaćanje mobilnim bankarstvom. Jedna ili više uplatnica, ispis i PNG. Podaci se ne šalju na poslužitelj.">
+<link rel="icon" href="zajednicko/logo.svg">
+<link rel="stylesheet" href="zajednicko/app-bonic.css">
+<link rel="stylesheet" href="stil.css">
+</head>
+<body data-alat="hub3-uplatnice">
+<header class="ab-vrh"></header>
+
+<main class="ab-omot">
+  <section class="ab-uvod ne-ispisuj">
+    <span class="ab-ikona"><span data-ik="novac"></span></span>
+    <div>
+      <h1>HUB-3 uplatnice s 2D barkodom</h1>
+      <p>Upiši primatelja, IBAN, iznos, model i poziv na broj — dobiješ uplatnicu s PDF417 barkodom koji se skenira mobilnim bankarstvom. Barkod je izrađen po HUB-3 specifikaciji Hrvatske udruge banaka (euro).</p>
+    </div>
+  </section>
+
+  <div class="seg nacin ne-ispisuj" role="radiogroup" aria-label="Način rada">
+    <label><input type="radio" name="nacin" value="jedna" checked><span>Jedna uplatnica</span></label>
+    <label><input type="radio" name="nacin" value="vise"><span>Više uplatnica iz popisa</span></label>
+  </div>
+
+  <div class="stupci sirok-desno">
+    <div class="slog ne-ispisuj">
+      <section class="kartica">
+        <h2>Primatelj <span class="pilula">obavezno</span></h2>
+        <div class="forma">
+          <div class="polje puno"><label for="primNaziv">Naziv / ime i prezime <small data-brojac="primNaziv"></small></label><input id="primNaziv" data-p="primNaziv" autocomplete="organization"></div>
+          <div class="polje puno"><label for="primAdresa">Ulica i broj <small data-brojac="primAdresa"></small></label><input id="primAdresa" data-p="primAdresa"></div>
+          <div class="polje puno"><label for="primMjesto">Poštanski broj i mjesto <small data-brojac="primMjesto"></small></label><input id="primMjesto" data-p="primMjesto" placeholder="10000 Zagreb"></div>
+          <div class="polje puno"><label for="iban">IBAN primatelja</label><input id="iban" data-p="iban" class="mono" placeholder="HR12 1001 0051 8630 0016 0" autocomplete="off" spellcheck="false"><small id="ibanPoruka"></small></div>
+        </div>
+      </section>
+
+      <section class="kartica">
+        <h2>Plaćanje</h2>
+        <div class="forma">
+          <div class="polje samo-jedna"><label for="iznos">Iznos (EUR)</label><input id="iznos" data-p="iznos" inputmode="decimal" placeholder="25,00" autocomplete="off"></div>
+          <div class="polje"><label for="sifra">Šifra namjene</label>
+            <select id="sifra" data-p="sifra">
+              <option value="">— bez šifre —</option>
+              <option value="OTHR">OTHR — ostalo</option>
+              <option value="COST">COST — troškovi</option>
+              <option value="GDSV">GDSV — roba i usluge</option>
+              <option value="GDDS">GDDS — kupnja robe</option>
+              <option value="SCVE">SCVE — kupnja usluga</option>
+              <option value="SUBS">SUBS — pretplata / članarina</option>
+              <option value="RENT">RENT — najam</option>
+              <option value="ELEC">ELEC — električna energija</option>
+              <option value="WTER">WTER — voda</option>
+              <option value="GASB">GASB — plin</option>
+              <option value="PHON">PHON — telefon</option>
+              <option value="CBTV">CBTV — kabelska televizija</option>
+              <option value="INSU">INSU — osiguranje</option>
+              <option value="CHAR">CHAR — donacija</option>
+              <option value="TAXS">TAXS — porez</option>
+              <option value="SALA">SALA — plaća</option>
+              <option value="SUPP">SUPP — plaćanje dobavljaču</option>
+            </select>
+          </div>
+          <div class="polje"><label for="model">Model</label>
+            <div class="model"><span class="mono">HR</span><input id="model" data-p="model" class="mono" maxlength="2" inputmode="numeric" list="modeli" placeholder="00"></div>
+            <datalist id="modeli"><option value="00">bez kontrole</option><option value="01"></option><option value="02"></option><option value="03"></option><option value="04"></option><option value="05"></option><option value="67"></option><option value="68"></option><option value="69"></option><option value="99">bez poziva na broj</option></datalist>
+          </div>
+          <div class="polje samo-jedna"><label for="poziv">Poziv na broj <small data-brojac="poziv"></small></label><input id="poziv" data-p="poziv" class="mono" placeholder="2026-001" autocomplete="off"><small id="pozivPoruka"></small></div>
+          <div class="polje puno samo-jedna"><label for="opis">Opis plaćanja <small data-brojac="opis"></small></label><input id="opis" data-p="opis" placeholder="Članarina 2026"></div>
+        </div>
+      </section>
+
+      <section class="kartica samo-jedna">
+        <h2>Platitelj <span class="pilula">neobavezno</span></h2>
+        <div class="forma">
+          <div class="polje puno"><label for="platIme">Ime i prezime / naziv <small data-brojac="platIme"></small></label><input id="platIme" data-p="platIme" autocomplete="name"></div>
+          <div class="polje puno"><label for="platAdresa">Ulica i broj <small data-brojac="platAdresa"></small></label><input id="platAdresa" data-p="platAdresa"></div>
+          <div class="polje puno"><label for="platMjesto">Poštanski broj i mjesto <small data-brojac="platMjesto"></small></label><input id="platMjesto" data-p="platMjesto"></div>
+        </div>
+      </section>
+
+      <section class="kartica samo-vise">
+        <h2>Popis platitelja</h2>
+        <p class="napomena">Jedan redak = jedna uplatnica. Stupci odvojeni točkom-zarezom (;) ili tabulatorom — možeš zalijepiti izravno iz Excela:</p>
+        <p class="napomena mono primjer-stupci">ime i prezime; ulica i broj; pošta i mjesto; iznos; poziv na broj; opis</p>
+        <textarea id="popis" rows="8" class="mono" placeholder="Ivan Horvat; Ilica 1; 10000 Zagreb; 25,00; 2026-001; Članarina 2026&#10;Ana Kovač; Vukovarska 5; 21000 Split; 25,00; 2026-002; Članarina 2026"></textarea>
+        <p class="napomena">Prazan opis ili poziv na broj uzima se iz polja iznad (model i šifra su zajednički).</p>
+      </section>
+
+      <section class="kartica">
+        <label class="kvacica"><input type="checkbox" id="zapamti"><span>Zapamti primatelja na ovom računalu (sprema se samo u ovaj preglednik)</span></label>
+        <div class="gumbi" style="margin-top:12px">
+          <button type="button" class="gumb" id="poveznica"><span data-ik="kopiraj"></span>Poveznica s podacima primatelja</button>
+          <button type="button" class="gumb tekstualni" id="primjer">Popuni primjerom</button>
+          <button type="button" class="gumb tekstualni opasno" id="ocisti">Očisti sve</button>
+        </div>
+        <p class="napomena" style="margin-top:8px">Poveznica sadrži podatke primatelja iza znaka # — pošalji je članovima ili kupcima pa samo upišu svoje podatke. Taj dio adrese preglednik nikad ne šalje poslužitelju.</p>
+      </section>
+    </div>
+
+    <div class="slog desno">
+      <section class="kartica ne-ispisuj">
+        <div class="gumbi">
+          <button type="button" class="gumb glavni veliki" id="ispisi"><span data-ik="ispis"></span>Ispiši / spremi PDF</button>
+          <button type="button" class="gumb samo-jedna" id="png"><span data-ik="preuzmi"></span>Barkod PNG</button>
+          <button type="button" class="gumb samo-jedna" id="svg"><span data-ik="preuzmi"></span>Barkod SVG</button>
+        </div>
+        <div id="poruke" class="poruke"></div>
+      </section>
+      <div id="uplatnice" class="uplatnice"></div>
+      <section class="kartica samo-jedna ne-ispisuj" id="velikiOkvir" hidden>
+        <h2>Skeniraj izravno sa zaslona</h2>
+        <div class="veliki-barkod" id="veliki"></div>
+        <p class="napomena">Otvori aplikaciju svoje banke → Plaćanja → Skeniraj uplatnicu (ili „Slikaj i plati”) i usmjeri kameru na barkod.</p>
+      </section>
+    </div>
+  </div>
+</main>
+
+<footer class="ab-dno"></footer>
+<script src="zajednicko/app-bonic.js"></script>
+<script src="lib/bwip-js-min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
