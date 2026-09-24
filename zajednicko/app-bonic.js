@@ -35,6 +35,7 @@
     osvjezi: '<path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.5 9a9 9 0 0 1 14.9-3.4L23 10M1 14l4.6 4.4A9 9 0 0 0 20.5 15"/>',
     strelica: '<path d="M5 12h14M12 5l7 7-7 7"/>',
     trazi: '<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>',
+    glazba: '<path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>',
   };
   const ikona = (k, cls) => `<svg class="ik${cls ? ' ' + cls : ''}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${IK[k] || IK.info}</svg>`;
 
@@ -52,6 +53,7 @@
     { id: 'vcard-posjetnice', naziv: 'vCard posjetnice', ik: 'kartica', kat: 'Kodovi i oznake', opis: 'Posjetnica s QR kodom koji sprema kontakt u mobitel, arak za ispis.' },
     { id: 'email-potpis', naziv: 'E-mail potpis', ik: 'mail', kat: 'Ured', opis: 'HTML potpis za Outlook, Gmail i Thunderbird — nekoliko predložaka, kopiraj jednim klikom.' },
     { id: 'generator-lozinki', naziv: 'Generator lozinki', ik: 'kljuc', kat: 'Ured', opis: 'Jake nasumične lozinke i fraze od hrvatskih riječi, s procjenom jačine.' },
+    { id: 'tamburas', naziv: 'Tamburaš', ik: 'glazba', kat: 'Glazba', opis: 'Metronom, štimer i akordi za tamburaše — prim, brač, bugarija, čelo, berde i gitara.' },
   ];
 
   const $ = (s, el = document) => el.querySelector(s);
