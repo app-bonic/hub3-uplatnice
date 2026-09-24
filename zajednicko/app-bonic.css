@@ -63,6 +63,13 @@ a { color: var(--plava); }
 .ab-marka img { width: 40px; height: 40px; display: block; }
 .ab-marka b { font: 800 22px/1 var(--naslovni); text-transform: uppercase; letter-spacing: .01em; display: block; }
 .ab-marka small { font: 700 11.5px/1.2 'Nunito Sans', sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--crvena); display: block; margin-top: 3px; }
+.ab-marka.ab-igre { padding-left: 14px; border-left: 1px solid var(--crta); }
+.ab-marka.ab-igre small { color: #7b3cff; }
+.ab-marka.ab-igre img { border-radius: 9px; box-shadow: 0 0 0 2px #7b3cff33, 0 0 14px #ff4bd855; }
+.ab-marka.ab-igre:hover img { transform: rotate(-8deg); }
+.ab-marka img { transition: transform .2s; }
+@media (max-width: 600px) { .ab-marka.ab-igre img { display: none; } .ab-marka.ab-igre { padding-left: 10px; } .ab-vrh-unutra { gap: 10px; } .ab-vrh nav a { padding: 8px 11px; } }
+@media (max-width: 420px) { .ab-marka b { font-size: 19px; } .ab-vrh nav a { font-size: 0; gap: 0; } .ab-vrh nav a .ik { width: 20px; height: 20px; } }
 .ab-vrh nav { margin-left: auto; display: flex; gap: 8px; }
 .ab-vrh nav a { text-decoration: none; font-weight: 800; font-size: 14.5px; padding: 9px 16px; min-height: 40px; border: 2px solid rgb(22 48 92 / .15); border-radius: 10px; background: #fff; color: var(--plava); display: inline-flex; gap: 7px; align-items: center; transition: border-color .15s; }
 .ab-vrh nav a:hover { border-color: rgb(22 48 92 / .4); }

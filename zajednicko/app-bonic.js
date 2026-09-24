@@ -67,6 +67,7 @@
     if (!el) return;
     el.innerHTML = `<div class="ab-vrh-unutra">
       <a class="ab-marka" href="${url('alati')}"><img src="zajednicko/logo.png" alt="" width="40" height="40"><span><b>app-bonic</b><small>Besplatni alati</small></span></a>
+      <a class="ab-marka ab-igre" href="${location.hostname.endsWith('github.io') ? '../igre/' : '../IGRE/igre/'}"><img src="zajednicko/logo.png" alt="" width="40" height="40"><span><b>app-bonic</b><small>Besplatne igre</small></span></a>
       ${trenutni !== 'alati' ? `<nav><a href="${url('alati')}">${ikona('mreza')} Svi alati</a></nav>` : ''}
     </div>`;
   }
