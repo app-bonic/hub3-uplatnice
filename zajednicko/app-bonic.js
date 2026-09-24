@@ -66,7 +66,7 @@
     const el = $('.ab-vrh');
     if (!el) return;
     el.innerHTML = `<div class="ab-vrh-unutra">
-      <a class="ab-marka" href="${url('alati')}"><img src="zajednicko/logo.svg" alt="" width="30" height="30">app-bonic <span>alati</span></a>
+      <a class="ab-marka" href="${url('alati')}"><img src="zajednicko/logo.png" alt="" width="40" height="40"><span><b>app-bonic</b><small>Besplatni alati</small></span></a>
       ${trenutni !== 'alati' ? `<nav><a href="${url('alati')}">${ikona('mreza')} Svi alati</a></nav>` : ''}
     </div>`;
   }
@@ -76,13 +76,14 @@
     if (!el) return;
     const god = new Date().getFullYear();
     el.innerHTML = `<div class="ab-dno-unutra">
-      <div class="ab-gdpr">${ikona('stit')}<div>
+      <div class="ab-gdpr">
+        <span class="oznaka-crvena">GDPR</span>
         <b>Tvoji podaci ne napuštaju tvoje računalo</b>
-        <p>Alat radi u potpunosti u tvom pregledniku. Ništa od onoga što upišeš ili učitaš ne šalje se na poslužitelj, ne sprema se u oblak i ne prati se — nema kolačića ni analitike. Zato je pogodan za rad s osobnim podacima (OIB, IBAN, ugovori, fotografije) i usklađen s duhom GDPR-a. Radi i bez interneta, nakon što se stranica jednom učita.</p>
-      </div></div>
+        <p>Alat radi u potpunosti u tvom pregledniku. Ništa od onoga što upišeš ili učitaš ne šalje se na poslužitelj, ne sprema se u oblak i ne prati se — nema kolačića ni analitike. Zato je pogodan za rad s osobnim podacima (OIB, IBAN, ugovori, fotografije). Radi i bez interneta, nakon što se stranica jednom učita.</p>
+      </div>
       <div class="ab-ostali"><h3>Svi alati</h3><ul>${ALATI.map(a =>
         `<li><a href="${url(a.id)}"${a.id === trenutni ? ' aria-current="page"' : ''}>${ikona(a.ik)}${esc(a.naziv)}</a></li>`).join('')}</ul></div>
-      <div class="ab-potpis"><img src="zajednicko/logo.svg" alt="" width="22" height="22"><span>© ${god} app-bonic · besplatni alati bez registracije</span><a href="${url('alati')}">Kazalo alata</a><a href="https://github.com/app-bonic" rel="noopener">GitHub</a></div>
+      <div class="ab-potpis"><img src="zajednicko/logo.png" alt="" width="28" height="28"><span>© ${god} app-bonic · besplatni alati bez registracije</span><a href="${url('alati')}">Kazalo alata</a><a href="https://github.com/app-bonic" rel="noopener">GitHub</a></div>
     </div>`;
   }
 

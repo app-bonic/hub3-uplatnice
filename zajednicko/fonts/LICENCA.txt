@@ -1,0 +1,2 @@
+Nunito Sans, Barlow Condensed i Caveat — SIL Open Font License 1.1 (preuzeto iz paketa @fontsource).
+Fontovi su lokalni da stranica ne kontaktira Google Fonts (GDPR).
