@@ -52,7 +52,6 @@
     { id: 'vcard-posjetnice', naziv: 'vCard posjetnice', ik: 'kartica', kat: 'Kodovi i oznake', opis: 'Posjetnica s QR kodom koji sprema kontakt u mobitel, arak za ispis.' },
     { id: 'email-potpis', naziv: 'E-mail potpis', ik: 'mail', kat: 'Ured', opis: 'HTML potpis za Outlook, Gmail i Thunderbird — nekoliko predložaka, kopiraj jednim klikom.' },
     { id: 'generator-lozinki', naziv: 'Generator lozinki', ik: 'kljuc', kat: 'Ured', opis: 'Jake nasumične lozinke i fraze od hrvatskih riječi, s procjenom jačine.' },
-    { id: 'urudzbeni-broj', naziv: 'KLASA i URBROJ', ik: 'pecat', kat: 'Ured', opis: 'Generator klasifikacijskih oznaka i urudžbenih brojeva po predlošku, s evidencijom.' },
   ];
 
   const $ = (s, el = document) => el.querySelector(s);
