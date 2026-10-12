@@ -36,6 +36,7 @@
     strelica: '<path d="M5 12h14M12 5l7 7-7 7"/>',
     trazi: '<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>',
     glazba: '<path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>',
+    ocr: '<path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M7 8h10M7 12h10M7 16h6"/>',
   };
   const ikona = (k, cls) => `<svg class="ik${cls ? ' ' + cls : ''}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${IK[k] || IK.info}</svg>`;
 
@@ -45,6 +46,7 @@
     { id: 'oib-provjera', naziv: 'Provjera OIB-a', ik: 'oib', kat: 'Plaćanja i provjere', opis: 'Kontrolna znamenka po ISO 7064 (MOD 11,10), provjera cijelog popisa i provjera IBAN-a.' },
     { id: 'pdf-alati', naziv: 'PDF alati', ik: 'slojevi', kat: 'PDF', opis: 'Spajanje, razdvajanje, rotiranje, brisanje i premještanje stranica PDF-a.' },
     { id: 'slike-pdf', naziv: 'Slike ↔ PDF', ik: 'pdf', kat: 'PDF', opis: 'Slike u jedan PDF (A4 ili veličina slike) i PDF u slike (PNG/JPG).' },
+    { id: 'ocr-tekst', naziv: 'OCR – tekst iz skena', ik: 'ocr', kat: 'PDF', opis: 'Prepoznaj tekst sa skena, PDF-a ili fotografije (hrvatski i engleski), označi stupce novina i preuzmi kao Word .docx.' },
     { id: 'slike-kompresija', naziv: 'Optimiziraj slike', ik: 'smanji', kat: 'Slike', opis: 'Kompresija i promjena veličine slika, JPG/WebP/PNG, uklanja EXIF i GPS podatke.' },
     { id: 'tablice-pretvorba', naziv: 'CSV ↔ Excel ↔ JSON', ik: 'tablica', kat: 'Podaci i tekst', opis: 'Pretvorba tablica između CSV, Excela (XLSX, XLS, ODS) i JSON-a, s pregledom.' },
     { id: 'sredi-popis', naziv: 'Sredi popis', ik: 'lista', kat: 'Podaci i tekst', opis: 'Uklanjanje duplikata, praznih redaka i sortiranje po hrvatskoj abecedi.' },
