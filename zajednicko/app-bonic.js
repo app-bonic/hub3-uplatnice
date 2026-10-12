@@ -46,7 +46,7 @@
     { id: 'oib-provjera', naziv: 'Provjera OIB-a', ik: 'oib', kat: 'Plaćanja i provjere', opis: 'Kontrolna znamenka po ISO 7064 (MOD 11,10), provjera cijelog popisa i provjera IBAN-a.' },
     { id: 'pdf-alati', naziv: 'PDF alati', ik: 'slojevi', kat: 'PDF', opis: 'Spajanje, razdvajanje, rotiranje, brisanje i premještanje stranica PDF-a.' },
     { id: 'slike-pdf', naziv: 'Slike ↔ PDF', ik: 'pdf', kat: 'PDF', opis: 'Slike u jedan PDF (A4 ili veličina slike) i PDF u slike (PNG/JPG).' },
-    { id: 'ocr-tekst', naziv: 'OCR – tekst iz skena', ik: 'ocr', kat: 'PDF', opis: 'Prepoznaj tekst sa skena, PDF-a ili fotografije (hrvatski i engleski), označi stupce novina i preuzmi kao Word .docx.' },
+    { id: 'ocr-tekst', naziv: 'OCR – tekst iz skena', ik: 'ocr', kat: 'PDF', opis: 'Tekst sa skena, PDF-a ili fotografije (hrvatski i engleski) uz ispravke hrvatskim rječnikom, stupce novina i pregled izvornika — preuzmi kao Word .docx.' },
     { id: 'slike-kompresija', naziv: 'Optimiziraj slike', ik: 'smanji', kat: 'Slike', opis: 'Kompresija i promjena veličine slika, JPG/WebP/PNG, uklanja EXIF i GPS podatke.' },
     { id: 'tablice-pretvorba', naziv: 'CSV ↔ Excel ↔ JSON', ik: 'tablica', kat: 'Podaci i tekst', opis: 'Pretvorba tablica između CSV, Excela (XLSX, XLS, ODS) i JSON-a, s pregledom.' },
     { id: 'sredi-popis', naziv: 'Sredi popis', ik: 'lista', kat: 'Podaci i tekst', opis: 'Uklanjanje duplikata, praznih redaka i sortiranje po hrvatskoj abecedi.' },
